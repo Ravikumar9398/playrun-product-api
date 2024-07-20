@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const multer = require("multer");
 const path = require("path");
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
@@ -11,6 +12,15 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(bodyParser.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+const corsOptions = {
+  origin: ["http://example.com", "https://playrun-product-api.vercel.app/"],
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  optionsSuccessStatus: 204,
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 // MongoDB connection
 mongoose
