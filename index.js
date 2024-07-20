@@ -14,9 +14,9 @@ app.use(bodyParser.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 const corsOptions = {
-  origin: ["http://example.com", "https://playrun-product-api.vercel.app/"],
+  origin: ["http://localhost:3000"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  optionsSuccessStatus: 204,
+  optionsSuccessStatus: 200,
   credentials: true,
 };
 
