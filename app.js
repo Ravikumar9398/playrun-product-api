@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 const corsOptions = {
-  origin: ["http://localhost:3000"],
+  origin: ["https://play-run-official.web.app", "http://localhost:3000"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   optionsSuccessStatus: 200,
   credentials: true,
